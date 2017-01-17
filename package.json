@@ -1,0 +1,26 @@
+{
+  "name": "ip-ptr",
+  "version": "0.1.0",
+  "author": "silverwind <me@silverwind.io>",
+  "description": "Get the PTR name for a given IPv4 or IPv6 address",
+  "repository": "silverwind/ip-ptr",
+  "license": "BSD-2-Clause",
+  "keywords": [
+    "ip",
+    "address",
+    "ptr",
+    "pointer",
+    "ip address",
+    "ip ptr"
+  ],
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "index.js",
+    "ip-ptr.js"
+  ],
+  "dependencies": {
+    "ip": "^1.1.4"
+  }
+}
