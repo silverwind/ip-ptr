@@ -17,8 +17,7 @@
     "node": ">=4"
   },
   "files": [
-    "index.js",
-    "ip-ptr.js"
+    "index.js"
   ],
   "dependencies": {
     "ip": "^1.1.4"
