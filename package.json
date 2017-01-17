@@ -5,6 +5,9 @@
   "description": "Get the PTR name for a given IPv4 or IPv6 address",
   "repository": "silverwind/ip-ptr",
   "license": "BSD-2-Clause",
+  "scripts": {
+    "test": "node test.js"
+  },
   "keywords": [
     "ip",
     "address",
@@ -20,6 +23,6 @@
     "index.js"
   ],
   "dependencies": {
-    "ip": "^1.1.4"
+    "ipaddr.js": "^1.2.0"
   }
 }
