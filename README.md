@@ -1,4 +1,5 @@
-# ip-ptr [![NPM version](https://img.shields.io/npm/v/ip-ptr.svg?style=flat)](https://www.npmjs.org/package/ip-ptr) [![Dependency Status](http://img.shields.io/david/silverwind/ip-ptr.svg?style=flat)](https://david-dm.org/silverwind/ip-ptr) [![Build Status](https://api.travis-ci.org/silverwind/ip-ptr.svg?style=flat)](https://travis-ci.org/silverwind/ip-ptr)
+# ip-ptr
+[![](https://img.shields.io/npm/v/ip-ptr.svg?style=flat)](https://www.npmjs.org/package/ip-ptr) [![](https://img.shields.io/npm/dm/ip-ptr.svg)](https://www.npmjs.org/package/ip-ptr) [![](https://api.travis-ci.org/silverwind/ip-ptr.svg?style=flat)](https://travis-ci.org/silverwind/ip-ptr)
 > Get the PTR name for a given IPv4 or IPv6 address
 
 ## Installation
