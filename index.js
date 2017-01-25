@@ -2,13 +2,15 @@
 
 const ip = require("ipaddr.js");
 
-const prefix = {
+const suffix = {
   v4: ".in-addr.arpa",
   v6: ".ip6.arpa",
 };
 
-module.exports = function ptr(addr) {
-  let parsed;
+module.exports = function ptr(addr, opts) {
+  let parsed, result;
+
+  opts = opts || {suffix: true};
 
   if (typeof addr !== "string") {
     throw new TypeError("'addr' argument must be a string, got a " + typeof addr);
@@ -21,10 +23,14 @@ module.exports = function ptr(addr) {
   }
 
   if (parsed instanceof ip.IPv4) {
-    return addr.split(".").reverse().join(".") + prefix.v4;
+    result = addr.split(".").reverse().join(".");
+
+    return opts.suffix ? result + suffix.v4 : result;
   } else if (parsed instanceof ip.IPv6) {
-    return parsed.toNormalizedString().split(":").map(function(n) {
+    result = parsed.toNormalizedString().split(":").map(function(n) {
       return n.length >= 4 ? n : new Array(4 - n.length + 1).join("0") + n;
-    }).join("").split("").reverse().join(".") + prefix.v6;
+    }).join("").split("").reverse().join(".");
+
+    return opts.suffix ? result + suffix.v6 : result;
   }
 };

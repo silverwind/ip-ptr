@@ -16,7 +16,9 @@ console.log(ptr('2001:db8::1'));
 ```
 
 ## API
-### ptr(addr)
-- `addr`: A valid IPv4 or IPv6 address.
+### ptr(addr, opts)
+- `addr` *String* - A valid IPv4 or IPv6 address.
+- `opts` *Object* - A optional options object.
+  - `suffix` *Boolean* - Whether to append the ARPA suffix. Default: `true`.
 
 © [silverwind](https://github.com/silverwind), distributed under BSD licence
