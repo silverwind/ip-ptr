@@ -1,15 +1,16 @@
 test:
-	node test.js
+	$(MAKE) lint
+	node --throw-deprecation --trace-warnings --trace-deprecation test.js
 
 lint:
-	eslint *.js
+	node_modules/.bin/eslint *.js
 
 publish:
 	git push -u --tags origin master
 	npm publish
 
 update:
-	ncu --packageFile package.json -ua
+	node_modules/.bin/updates -u
 	rm -rf node_modules
 	yarn
 

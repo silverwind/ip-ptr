@@ -6,7 +6,7 @@
   "repository": "silverwind/ip-ptr",
   "license": "BSD-2-Clause",
   "scripts": {
-    "test": "node test.js"
+    "test": "make test"
   },
   "keywords": [
     "ip",
@@ -23,6 +23,10 @@
     "index.js"
   ],
   "dependencies": {
-    "ipaddr.js": "^1.2.0"
+    "ipaddr.js": "^1.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "updates": "^1.2.6"
   }
 }
