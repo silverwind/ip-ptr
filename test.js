@@ -1,7 +1,7 @@
 "use strict";
 
-var assert = require("assert");
-var ptr = require(".");
+const assert = require("assert");
+const ptr = require(".");
 
 assert.throws(() => ptr());
 assert.throws(() => ptr({}));
