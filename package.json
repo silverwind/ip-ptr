@@ -1,6 +1,6 @@
 {
   "name": "ip-ptr",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "author": "silverwind <me@silverwind.io>",
   "description": "Get the PTR name for a given IPv4 or IPv6 address",
   "repository": "silverwind/ip-ptr",
