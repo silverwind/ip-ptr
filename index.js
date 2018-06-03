@@ -27,7 +27,7 @@ module.exports = function ptr(addr, opts) {
 
     return opts.suffix ? result + suffix.v4 : result;
   } else if (parsed instanceof ip.IPv6) {
-    result = parsed.toNormalizedString().split(":").map(function(n) {
+    result = parsed.toNormalizedString().split(":").map(n => {
       return n.length >= 4 ? n : new Array(4 - n.length + 1).join("0") + n;
     }).join("").split("").reverse().join(".");
 
