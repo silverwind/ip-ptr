@@ -1,36 +1,20 @@
 "use strict";
 
-const ip = require("ipaddr.js");
+const ipaddr = require("ipaddr.js");
 
-const suffix = {
-  v4: ".in-addr.arpa",
-  v6: ".ip6.arpa",
-};
-
-module.exports = function ptr(addr, opts) {
-  let parsed, result;
-
-  opts = opts || {suffix: true};
-
-  if (typeof addr !== "string") {
-    throw new TypeError("'addr' argument must be a string, got a " + typeof addr);
-  }
-
+module.exports = function ptr(ip) {
+  let parsed;
   try {
-    parsed = ip.parse(addr);
+    parsed = ipaddr.parse(ip);
   } catch (e) {
-    throw new Error("Invalid IP address: " + addr);
+    throw new Error(`Invalid IP address: ${ip}`);
   }
 
-  if (parsed instanceof ip.IPv4) {
-    result = addr.split(".").reverse().join(".");
-
-    return opts.suffix ? result + suffix.v4 : result;
-  } else if (parsed instanceof ip.IPv6) {
-    result = parsed.toNormalizedString().split(":").map(n => {
+  if (parsed instanceof ipaddr.IPv4) {
+    return ip.split(".").reverse().join(".") + ".in-addr.arpa";
+  } else {
+    return parsed.toNormalizedString().split(":").map(n => {
       return n.length >= 4 ? n : new Array(4 - n.length + 1).join("0") + n;
-    }).join("").split("").reverse().join(".");
-
-    return opts.suffix ? result + suffix.v6 : result;
+    }).join("").split("").reverse().join(".") + ".ip6.arpa";
   }
 };

@@ -4,21 +4,22 @@
 
 ## Installation
 ```console
-$ npm i --save ip-ptr
+$ npm i ip-ptr
 ```
 ## Example
 ```js
-var ptr = require('ip-ptr');
-console.log(ptr('1.2.3.4'));
+const ipPtr = require('ip-ptr');
+
+ipPtr('1.2.3.4');
 //=> 4.3.2.1.in-addr.arpa
-console.log(ptr('2001:db8::1'));
+ipPtr('2001:db8::1');
 //=> 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa
 ```
 
 ## API
-### ptr(addr, opts)
-- `addr` *String* - A valid IPv4 or IPv6 address.
-- `opts` *Object* - A optional options object.
-  - `suffix` *Boolean* - Whether to append the ARPA suffix. Default: `true`.
+### ipPtr(ip)
+- `ip` *string* - A IPv4 or IPv6 address.
+
+Will throw on if `ip` is not a valid IP address.
 
 © [silverwind](https://github.com/silverwind), distributed under BSD licence
