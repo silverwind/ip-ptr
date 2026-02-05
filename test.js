@@ -1,7 +1,5 @@
-"use strict";
-
-const assert = require("assert");
-const ptr = require(".");
+import assert from "node:assert";
+import ptr from "./index.js";
 
 assert.throws(() => ptr());
 assert.throws(() => ptr({}));

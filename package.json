@@ -4,6 +4,7 @@
   "author": "silverwind <me@silverwind.io>",
   "description": "Get the PTR name for a given IPv4 or IPv6 address",
   "repository": "silverwind/ip-ptr",
+  "type": "module",
   "license": "BSD-2-Clause",
   "scripts": {
     "test": "make test"
@@ -27,8 +28,9 @@
     "ipaddr.js": "^1.8.1"
   },
   "devDependencies": {
-    "eslint": "^5.12.1",
-    "eslint-config-silverwind": "^2.0.14",
+    "eslint": "^9.39.2",
+    "eslint-config-silverwind": "^120.1.2",
+    "typescript-config-silverwind": "14.0.0",
     "updates": "^6.2.1"
   }
 }
