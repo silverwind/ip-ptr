@@ -16,6 +16,7 @@
     "ip address",
     "ip ptr"
   ],
+  "packageManager": "pnpm@10.28.2",
   "engines": {
     "node": ">=6"
   },

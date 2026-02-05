@@ -1,29 +1,26 @@
-BIN:=node_modules/.bin
-
 test:
-	$(BIN)/eslint --color --quiet *.js
+	pnpm exec eslint --color --quiet *.js
 	node --trace-deprecation --throw-deprecation --trace-warnings test.js
 
 publish:
 	git push -u --tags origin master
-	npm publish
+	pnpm publish
 
 update:
-	$(BIN)/updates -u
+	pnpm exec updates -u
 	rm -rf node_modules
-	yarn
+	pnpm install
 
-npm-patch:
-	npm version patch
+patch: test
+	pnpm version patch
+	$(MAKE) publish
 
-npm-minor:
-	npm version minor
+minor: test
+	pnpm version minor
+	$(MAKE) publish
 
-npm-major:
-	npm version major
+major: test
+	pnpm version major
+	$(MAKE) publish
 
-patch: test npm-patch publish
-minor: test npm-minor publish
-major: test npm-major publish
-
-.PHONY: test publish update patch minor major npm-patch npm-minor npm-major
+.PHONY: test publish update patch minor major
