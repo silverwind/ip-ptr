@@ -4,7 +4,7 @@ test:
 
 publish:
 	git push -u --tags origin master
-	pnpm publish
+	pnpm publish --no-git-checks
 
 update:
 	pnpm exec updates -u
