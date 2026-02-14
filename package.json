@@ -25,13 +25,13 @@
     "index.js"
   ],
   "dependencies": {
-    "ipaddr.js": "^1.8.1"
+    "ipaddr.js": "^2.3.0"
   },
   "devDependencies": {
     "eslint": "^9.39.2",
-    "eslint-config-silverwind": "^120.1.2",
-    "typescript-config-silverwind": "14.0.0",
-    "updates": "^6.2.1",
+    "eslint-config-silverwind": "^121.0.5",
+    "typescript-config-silverwind": "15.0.0",
+    "updates": "^17.5.2",
     "updates-config-silverwind": "1.0.3"
   }
 }
