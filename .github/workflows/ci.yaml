@@ -16,4 +16,5 @@ jobs:
         with:
           cache: pnpm
           node-version: ${{matrix.node}}
+      - run: pnpm install
       - run: make test
