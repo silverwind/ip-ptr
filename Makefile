@@ -1,5 +1,10 @@
-test:
-	pnpm exec eslint --color .
+lint:
+	pnpm exec eslint-silverwind --color .
+
+lint-fix:
+	pnpm exec eslint-silverwind --color . --fix
+
+test: lint
 	node --trace-deprecation --throw-deprecation --trace-warnings test.js
 
 publish:
@@ -23,4 +28,4 @@ major: test
 	pnpm version major
 	$(MAKE) publish
 
-.PHONY: test publish update patch minor major
+.PHONY: lint lint-fix test publish update patch minor major

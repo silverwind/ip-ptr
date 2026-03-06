@@ -17,7 +17,7 @@
     "ip address",
     "ip ptr"
   ],
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.30.3",
   "engines": {
     "node": ">=6"
   },
@@ -28,10 +28,10 @@
     "ipaddr.js": "^2.3.0"
   },
   "devDependencies": {
-    "eslint": "^9.39.2",
-    "eslint-config-silverwind": "^121.0.5",
+    "eslint": "^9.39.3",
+    "eslint-config-silverwind": "^122.0.2",
     "typescript-config-silverwind": "15.0.0",
-    "updates": "^17.5.2",
+    "updates": "^17.8.2",
     "updates-config-silverwind": "1.0.3"
   }
 }
