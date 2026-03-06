@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "eslint": "^9.39.3",
-    "eslint-config-silverwind": "^122.0.4",
+    "eslint-config-silverwind": "^122.0.6",
     "typescript-config-silverwind": "15.0.0",
     "updates": "^17.8.2",
     "updates-config-silverwind": "1.0.3"
