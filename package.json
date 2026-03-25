@@ -5,6 +5,7 @@
   "description": "Get the PTR name for a given IPv4 or IPv6 address",
   "repository": "silverwind/ip-ptr",
   "type": "module",
+  "sideEffects": false,
   "license": "BSD-2-Clause",
   "scripts": {
     "test": "make test"
