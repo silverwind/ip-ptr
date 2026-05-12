@@ -18,7 +18,7 @@
     "ip address",
     "ip ptr"
   ],
-  "packageManager": "pnpm@10.33.0",
+  "packageManager": "pnpm@10.33.4",
   "engines": {
     "node": ">=6"
   },
@@ -26,14 +26,14 @@
     "index.js"
   ],
   "dependencies": {
-    "ipaddr.js": "^2.3.0"
+    "ipaddr.js": "^2.4.0"
   },
   "devDependencies": {
-    "eslint": "^9.39.4",
-    "eslint-config-silverwind": "^131.0.4",
+    "eslint": "^10.3.0",
+    "eslint-config-silverwind": "^133.0.1",
     "jest-extended": "7.0.0",
-    "typescript-config-silverwind": "17.0.0",
-    "updates": "^17.15.2",
-    "updates-config-silverwind": "2.1.0"
+    "typescript-config-silverwind": "18.0.0",
+    "updates": "^17.16.10",
+    "updates-config-silverwind": "3.0.2"
   }
 }
