@@ -1,15 +1,10 @@
 {
   "name": "ip-ptr",
   "version": "3.0.0",
-  "author": "silverwind <me@silverwind.io>",
   "description": "Get the PTR name for a given IPv4 or IPv6 address",
+  "author": "silverwind <me@silverwind.io>",
   "repository": "silverwind/ip-ptr",
-  "type": "module",
-  "sideEffects": false,
   "license": "BSD-2-Clause",
-  "scripts": {
-    "test": "make test"
-  },
   "keywords": [
     "ip",
     "address",
@@ -18,22 +13,36 @@
     "ip address",
     "ip ptr"
   ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "packageManager": "pnpm@10.33.4",
   "engines": {
-    "node": ">=6"
+    "node": ">=22",
+    "bun": "*"
   },
-  "files": [
-    "index.js"
-  ],
   "dependencies": {
-    "ipaddr.js": "^2.4.0"
+    "ip-bigint": "^9.0.4"
   },
   "devDependencies": {
-    "eslint": "^10.3.0",
-    "eslint-config-silverwind": "^133.0.1",
+    "@types/node": "25.8.0",
+    "@typescript/native-preview": "7.0.0-dev.20260516.1",
+    "eslint": "10.4.0",
+    "eslint-config-silverwind": "133.0.3",
     "jest-extended": "7.0.0",
+    "tsdown": "0.22.0",
+    "tsdown-config-silverwind": "3.0.1",
+    "typescript": "6.0.3",
     "typescript-config-silverwind": "18.0.0",
-    "updates": "^17.16.10",
-    "updates-config-silverwind": "3.0.2"
+    "updates": "17.16.12",
+    "updates-config-silverwind": "3.0.2",
+    "versions": "15.0.4",
+    "vitest": "4.1.6",
+    "vitest-config-silverwind": "11.3.5"
   }
 }

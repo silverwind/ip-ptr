@@ -1,31 +1,56 @@
-lint:
+SOURCE_FILES := index.ts
+DIST_FILES := dist/index.js
+
+node_modules: pnpm-lock.yaml
+	pnpm install
+	@touch node_modules
+
+.PHONY: deps
+deps: node_modules
+
+.PHONY: lint
+lint: node_modules
 	pnpm exec eslint-silverwind --color .
+	pnpm exec tsgo
 
-lint-fix:
+.PHONY: lint-fix
+lint-fix: node_modules
 	pnpm exec eslint-silverwind --color . --fix
+	pnpm exec tsgo
 
-test: lint
-	node --trace-deprecation --throw-deprecation --trace-warnings test.js
+.PHONY: test
+test: node_modules
+	pnpm exec vitest
 
-publish:
-	git push -u --tags origin master
+.PHONY: test-update
+test-update: node_modules
+	pnpm exec vitest -u
+
+.PHONY: build
+build: node_modules $(DIST_FILES)
+
+$(DIST_FILES): $(SOURCE_FILES) pnpm-lock.yaml package.json tsdown.config.ts
+	pnpm exec tsdown
+
+.PHONY: update
+update: node_modules
+	pnpm exec updates -cu
+	rm -rf node_modules pnpm-lock.yaml
+	pnpm install
+	@touch node_modules
+
+.PHONY: publish
+publish: node_modules
 	pnpm publish --no-git-checks
 
-update:
-	pnpm exec updates -u
-	rm -rf node_modules
-	pnpm install
+.PHONY: patch
+patch: node_modules lint test
+	pnpm exec versions -R patch package.json
 
-patch: test
-	pnpm version patch
-	$(MAKE) publish
+.PHONY: minor
+minor: node_modules lint test
+	pnpm exec versions -R minor package.json
 
-minor: test
-	pnpm version minor
-	$(MAKE) publish
-
-major: test
-	pnpm version major
-	$(MAKE) publish
-
-.PHONY: lint lint-fix test publish update patch minor major
+.PHONY: major
+major: node_modules lint test
+	pnpm exec versions -R major package.json
