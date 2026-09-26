@@ -1,12 +1,14 @@
 # ip-ptr
 [![](https://img.shields.io/npm/v/ip-ptr.svg?style=flat)](https://www.npmjs.org/package/ip-ptr) [![](https://img.shields.io/npm/dm/ip-ptr.svg)](https://www.npmjs.org/package/ip-ptr) [![](https://packagephobia.com/badge?p=ip-ptr)](https://packagephobia.com/result?p=ip-ptr)
+
 > Get the PTR name for a given IPv4 or IPv6 address
 
-## Installation
-```console
-$ npm i ip-ptr
+## Usage
+
+```sh
+pnpm add ip-ptr
 ```
-## Example
+
 ```js
 import ipPtr from "ip-ptr";
 
@@ -18,7 +20,7 @@ ipPtr("2001:db8::1");
 
 ## API
 ### ipPtr(ip)
-- `ip` *string* - A IPv4 or IPv6 address.
+- `ip` *string* - An IPv4 or IPv6 address.
 
 Will throw if `ip` is not a valid IP address.
 
