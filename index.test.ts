@@ -1,12 +1,9 @@
 import ptr from "./index.ts";
 
 test("ptr", () => {
-  // @ts-expect-error testing invalid input
-  expect(() => ptr()).toThrow();
-  // @ts-expect-error testing invalid input
-  expect(() => ptr({})).toThrow();
-  // @ts-expect-error testing invalid input
-  expect(() => ptr(1)).toThrow();
+  for (const input of [undefined, {}, 1]) {
+    expect(() => ptr(input as string)).toThrow();
+  }
 
   expect(ptr("1.2.3.4")).toEqual("4.3.2.1.in-addr.arpa");
   expect(ptr("127.0.0.1")).toEqual("1.0.0.127.in-addr.arpa");
